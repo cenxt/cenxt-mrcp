@@ -95,8 +95,8 @@ apt-get install openjdk-17-jre
 mkdir -p /appdata/cenxt-mrcp
 mkdir -p /applog/cenxt-mrcp
 cd /appdata/cenxt-mrcp
-wget https://raw.githubusercontent.com/cenxt/cenxt-mrcp/refs/heads/main/cenxt-mrcp-1.0.0.tar.gz
-tar -zxvf cenxt-mrcp-1.0.0.tar.gz
+wget https://raw.githubusercontent.com/cenxt/cenxt-mrcp/refs/heads/main/cenxt-mrcp-1.0.1.tar.gz
+tar -zxvf cenxt-mrcp-1.0.1.tar.gz
 
 #修改配置文件config/application.yml 
 vi config/application.yml
@@ -127,7 +127,7 @@ docker run -d \
 --network host \
 -v /appdata/cenxt-mrcp/config:/appdata/cenxt-mrcp/config \
 -v /applog/cenxt-mrcp:/applog/cenxt-mrcp \
-ccr.ccs.tencentyun.com/cenxt/cenxt-mrcp:1.0.0
+ccr.ccs.tencentyun.com/cenxt/cenxt-mrcp:1.0.1
 ```
 
 修改配置文件参考：[CENXT-MRCP配置](#4cenxt-mrcp配置)
@@ -196,7 +196,7 @@ cenxt:
 
 - 目前支持ASR引擎类型：aliyun、doubao
 - 目前支持TTS引擎类型：aliyun、doubao
-
+- **需传递自定义参数callee才能实现动态路由策略**
 ```
   tts:
     default-engine: doubao-tts
@@ -350,4 +350,15 @@ cenxt:
         speech-complete-timeout: 800
         # 可选,识别中超时
         speech-incomplete-timeout: 10000
+```
+### 5、常见问题
+#### （1）多网卡适配
+sip、mrcp、rtp监听的地址均为```0.0.0.0```，可以通过配置来调整sdp中的对外ip信息。配置具体ip或者前缀，二选一。
+```
+cenxt:
+  mrcp:
+    # 可选 对外ip 可以不设置
+    external-ip:
+    # 可选，可以不设置 自动获取指定前缀的ip作为对外ip
+    external-ip-prefix: 192.168
 ```
