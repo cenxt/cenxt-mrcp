@@ -1,0 +1,100 @@
+spring:
+  application:
+    name: cenxt-mrcp
+
+logging:
+  config: classpath:log4j2.xml
+
+cenxt:
+  mrcp:
+    sip:
+      port: 7010
+      transport: udp
+    # 可选 对外ip 可以不设置
+    external-ip:
+    # 可选，可以不设置 自动获取指定前缀的ip作为对外ip
+    external-ip-prefix:
+    # MRCP服务端口
+    port: 1544
+    # rtp端口范围
+    rtp:
+      start-port: 30000
+      end-port: 32000
+  ai:
+    default-engine: coze
+    coze:
+      api-url: https://api.coze.cn
+      api-key:
+      bot-id:
+  tts:
+    default-engine: doubao
+    # 可选，路由规则。根据被叫号码匹配不同的tts服务
+    route-rules:
+      # 正则匹配
+      - callee-regex: ^101\d+$
+        # 可选 使用的引擎
+        engine: aliyun
+      - callee-regex: ^100\d+$
+        # 可选 使用的引擎
+        engine: cenxt-llm-tts
+    aliyun:
+      app-key:
+      access-key-id:
+      access-key-secret:
+      url: wss://nls-gateway-cn-shanghai.aliyuncs.com/ws/v1
+      # 可选 语音名称 zhimiao_emo zhitian_emo
+      voice-name: zhitian_emo
+      # 可选 语速
+      speed-rate: 1.0
+    doubao:
+      app-id:
+      access-token:
+      cluster:
+      url: wss://openspeech.bytedance.com/api/v1/tts/ws_binary
+      # 可选 语音名称 BV001_streaming BV104_streaming
+      voice-name: BV104_streaming
+      # 可选 语速
+      speed-rate: 1.0
+    cenxt-llm-tts:
+      name: llm-tts
+      llm-tts-ai-engine: coze
+      llm-tts-tts-engine: doubao
+      llm-tts-sentence-separator: 。！？~
+  asr:
+    default-engine: aliyun
+    # 可选，匹配规则
+    route-rules:
+      # 正则匹配
+      - callee-regex: ^101\d+$
+        # 可选 使用的引擎
+        engine: aliyun
+      - callee-regex: ^100\d+$
+        # 可选 使用的引擎
+        engine: doubao
+    aliyun:
+      app-key:
+      access-key-id:
+      access-key-secret:
+      url: wss://nls-gateway-cn-shanghai.aliyuncs.com/ws/v1
+      # 可选,语音识别超时
+      recognition-timeout: 10000
+      # 可选,没有输入超时
+      no-input-timeout: 3000
+      # 可选,识别结束超时
+      speech-complete-timeout: 800
+      # 可选,识别中超时
+      speech-incomplete-timeout: 10000
+    doubao:
+      app-id:
+      access-token:
+      cluster: volcengine_streaming_common
+      url: wss://openspeech.bytedance.com/api/v2/asr
+      # 可选,语音识别超时
+      recognition-timeout: 10000
+      # 可选,没有输入超时
+      no-input-timeout: 5000
+      # 可选,识别结束超时
+      speech-complete-timeout: 800
+      # 可选,识别中超时
+      speech-incomplete-timeout: 10000
+
