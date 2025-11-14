@@ -103,7 +103,7 @@ end
         <version>1.0.1</version>
     </dependency>
 ```
-#### （2）参照示例实现接口 ```AsrProcessHandler``` 、```TtsProcessHandler``` 、```AiProcessHandler``` 、```TtsStreamProcessHandler``` 、```AsrStreamProcessHandler```
+#### （2）参照示例实现接口 ```AsrProcessHandler``` 、```TtsProcessHandler``` 、```AiProcessHandler``` `
 
 #### （3）启动类加上注解 ```@EnableCenxtMrcp```
 
