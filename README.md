@@ -105,8 +105,8 @@ end
 ```
 #### （2）参照示例实现接口 ```AsrProcessHandler``` 、```TtsProcessHandler``` 、```AiProcessHandler``` 、```TtsStreamProcessHandler``` 、```AsrStreamProcessHandler```
 
+#### （3）启动类加上注解 ```@EnableCenxtMrcp```
 
-修改配置文件参考：[CENXT-MRCP配置](#4cenxt-mrcp配置)
 
 ### 4、CENXT-MRCP配置
 
