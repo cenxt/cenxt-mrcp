@@ -100,10 +100,10 @@ end
     <dependency>
         <groupId>cn.cenxt.cc</groupId>
         <artifactId>cenxt-mrcp-core</artifactId>
-        <version>1.0.1</version>
+        <version>1.1.0</version>
     </dependency>
 ```
-#### （2）参照示例实现接口 ```AsrProcessHandler``` 、```TtsProcessHandler``` 、```AiProcessHandler``` `
+#### （2）参照示例，实现接口 ```AsrProcessHandler``` 、```TtsProcessHandler``` 、```AiProcessHandler``` `
 
 #### （3）启动类加上注解 ```@EnableCenxtMrcp```
 

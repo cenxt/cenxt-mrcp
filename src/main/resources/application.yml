@@ -56,7 +56,6 @@ cenxt:
       # 可选 语速
       speed-rate: 1.0
     cenxt-llm-tts:
-      name: llm-tts
       llm-tts-ai-engine: coze
       llm-tts-tts-engine: doubao
       llm-tts-sentence-separator: 。！？~
