@@ -140,20 +140,22 @@ cenxt:
       start-port: 30000
       end-port: 32000
   tts:
+    # 豆包tts服务 开通地址 https://console.volcengine.com/speech/app
     doubao:
-      app-id:
-      access-token:
-      cluster:
+      app-id: <填写你申请的内容>
+      access-token: <填写你申请的内容>
+      cluster: <填写你申请的内容>
       url: wss://openspeech.bytedance.com/api/v1/tts/ws_binary
       # 可选 语音名称 BV001_streaming BV104_streaming
       voice-name: BV104_streaming
       # 可选 语速
       speed-rate: 1.0
   asr:
+    # 豆包asr服务 开通地址 https://console.volcengine.com/speech/app
     doubao:
-      app-id:
-      access-token:
-      cluster: volcengine_streaming_common
+      app-id: <填写你申请的内容>
+      access-token: <填写你申请的内容>
+      cluster: <填写你申请的内容>
       url: wss://openspeech.bytedance.com/api/v2/asr
       # 可选,语音识别超时
       recognition-timeout: 10000
@@ -207,18 +209,18 @@ cenxt:
         # 可选 使用的引擎
         engine: doubao
     aliyun:
-      app-key:
-      access-key-id:
-      access-key-secret:
+      app-key: <填写你申请的内容>
+      access-key-id: <填写你申请的内容>
+      access-key-secret: <填写你申请的内容>
       url: wss://nls-gateway-cn-shanghai.aliyuncs.com/ws/v1
       # 可选 语音名称 zhimiao_emo zhitian_emo
       voice-name: zhitian_emo
       # 可选 语速
       speed-rate: 1.0
     doubao:
-      app-id:
-      access-token:
-      cluster:
+      app-id: <填写你申请的内容>
+      access-token: <填写你申请的内容>
+      cluster: <填写你申请的内容>
       url: wss://openspeech.bytedance.com/api/v1/tts/ws_binary
       # 可选 语音名称 BV001_streaming BV104_streaming
       voice-name: BV104_streaming
@@ -236,9 +238,9 @@ cenxt:
         # 可选 使用的引擎
         engine: doubao
     aliyun:
-      app-key:
-      access-key-id:
-      access-key-secret:
+      app-key: <填写你申请的内容>
+      access-key-id: <填写你申请的内容>
+      access-key-secret: <填写你申请的内容>
       url: wss://nls-gateway-cn-shanghai.aliyuncs.com/ws/v1
       # 可选,语音识别超时
       recognition-timeout: 10000
@@ -249,9 +251,9 @@ cenxt:
       # 可选,识别中超时
       speech-incomplete-timeout: 10000
     doubao:
-      app-id:
-      access-token:
-      cluster: volcengine_streaming_common
+      app-id: <填写你申请的内容>
+      access-token: <填写你申请的内容>
+      cluster: <填写你申请的内容>
       url: wss://openspeech.bytedance.com/api/v2/asr
       # 可选,语音识别超时
       recognition-timeout: 10000
@@ -317,16 +319,17 @@ cenxt:
       end-port: 32000
   ai:
     default-engine: coze
+    # 扣子智能体开发平台 开通地址 https://www.coze.cn/home
     coze:
       api-url: https://api.coze.cn
-      api-key:
-      bot-id:
+      api-key: <填写你申请的内容>
+      bot-id: <填写你申请的内容>
   tts:
     default-engine: doubao
     doubao:
-      app-id:
-      access-token:
-      cluster:
+      app-id: <填写你申请的内容>
+      access-token: <填写你申请的内容>
+      cluster: <填写你申请的内容>
       url: wss://openspeech.bytedance.com/api/v1/tts/ws_binary
       # 可选 语音名称 BV001_streaming BV104_streaming
       voice-name: BV104_streaming
@@ -339,9 +342,9 @@ cenxt:
   asr:
     default-engine: doubao
     doubao:
-      app-id:
-      access-token:
-      cluster: volcengine_streaming_common
+      app-id: <填写你申请的内容>
+      access-token: <填写你申请的内容>
+      cluster: <填写你申请的内容>
       url: wss://openspeech.bytedance.com/api/v2/asr
       # 可选,语音识别超时
       recognition-timeout: 10000
