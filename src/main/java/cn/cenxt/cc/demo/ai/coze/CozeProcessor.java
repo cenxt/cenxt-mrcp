@@ -17,8 +17,8 @@ import com.coze.openapi.client.connversations.message.model.MessageType;
 import com.coze.openapi.service.auth.TokenAuth;
 import com.coze.openapi.service.service.CozeAPI;
 import io.reactivex.Flowable;
-import jakarta.annotation.PostConstruct;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.beans.factory.InitializingBean;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 import org.springframework.util.StringUtils;
@@ -28,7 +28,7 @@ import java.util.concurrent.atomic.AtomicReference;
 
 @Slf4j
 @Component
-public class CozeProcessor implements AiProcessHandler {
+public class CozeProcessor implements AiProcessHandler, InitializingBean {
 
     @Autowired
     private CozeConfig cozeConfig;
@@ -38,8 +38,8 @@ public class CozeProcessor implements AiProcessHandler {
     @Autowired
     private AiConversationManager conversationManager;
 
-    @PostConstruct
-    public void init() {
+    @Override
+    public void afterPropertiesSet() throws Exception {
         TokenAuth authCli = getAuthCli();
         coze =
                 new CozeAPI.Builder()

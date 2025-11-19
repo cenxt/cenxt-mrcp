@@ -19,12 +19,12 @@ CENXT MRCP Server 是一个基于Java实现的MRCPv2协议服务器，支持语�
 - QQ交流群：1062716087
 ## 技术架构
 
-- 基于Spring Boot 3.4.5
-- Java 17
+- 基于Spring Boot 1.5.10及以上
+- Java 1.8
 
 ## 系统要求
 
-- Java 17或更高版本
+- Java 1.8或更高版本
 - 至少128MB可用内存
 
 ## 快速开始
@@ -102,7 +102,7 @@ end
     <dependency>
         <groupId>cn.cenxt.cc</groupId>
         <artifactId>cenxt-mrcp-core</artifactId>
-        <version>1.1.0</version>
+        <version>1.2.0</version>
     </dependency>
 ```
 #### （2）参照示例，实现接口 ```AsrProcessHandler``` 、```TtsProcessHandler``` 、```AiProcessHandler``` `
