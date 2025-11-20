@@ -94,7 +94,7 @@ end
         <repository>
             <id>cenxt-maven</id>
             <name>cenxt-maven</name>
-            <url>http://nexus.cenxt.cn/repository/cenxt-maven/</url>
+            <url>https://nexus.cenxt.cn/repository/cenxt-maven/</url>
         </repository>
     </repositories>
     
@@ -102,7 +102,7 @@ end
     <dependency>
         <groupId>cn.cenxt.cc</groupId>
         <artifactId>cenxt-mrcp-core</artifactId>
-        <version>1.2.0</version>
+        <version>1.2.1</version>
     </dependency>
 ```
 #### （2）参照示例，实现接口 ```AsrProcessHandler``` 、```TtsProcessHandler``` 、```AiProcessHandler``` `
