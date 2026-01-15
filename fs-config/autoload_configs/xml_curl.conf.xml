@@ -1,0 +1,11 @@
+<configuration name="xml_curl.conf" description="cURL XML Gateway">
+  <bindings> 
+    <binding name="all configs"> 
+      <param name="gateway-url" value="http://172.17.0.1:10002/fs-agent/xml-curl" bindings="dialplan|configuration|directory|phrases"/> 
+	    <param name="timeout" value="10"/>
+	    <param name="method" value="POST"/>
+      <param name="gateway-credentials" value="muser:mypass"/>
+      <param name="auth-scheme" value="basic"/>
+    </binding> 
+  </bindings> 
+</configuration>

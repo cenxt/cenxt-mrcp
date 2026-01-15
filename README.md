@@ -34,10 +34,27 @@ CENXT MRCP Server 是一个基于Java实现的MRCPv2协议服务器，支持语�
 - 参考地址：https://freeswitch.org.cn/books/case-study/1.9-mod_unimrcp-install.html#mod_unimrcp-install
 - 配置参考：https://freeswitch.org.cn/books/case-study/1.11-aliyun-mrcp.html#aliyun-mrcp
 
-也可以使用我构建好的镜像
+（可选，参考使用）也可以使用我构建好的镜像
 ```
 docker pull ccr.ccs.tencentyun.com/cenxt/cenxt-freeswitch-with-mrcp:1.10.12
 ```
+（可选，参考使用）freeswitch参考配置 https://github.com/cenxt/cenxt-mrcp/fs-config
+
+（可选，参考使用）docker启动命令
+```
+docker run --name freeswitch -d  \
+-v /appdata/freeswitch/fs-config:/usr/local/freeswitch/conf \
+-v /appdata/freeswitch/fs-config/grammar:/usr/local/freeswitch/grammar \
+-v /appdata/freeswitch/fs-config/scripts:/usr/local/freeswitch/scripts \
+-p 5060:5060/udp \
+-p 5066:5066/tcp \
+-p 20000-20020:20000-20020/udp \
+--network host \
+ccr.ccs.tencentyun.com/cenxt/cenxt-freeswitch-with-mrcp:1.10.12
+
+```
+
+
 ### 2、Freeswitch配置
 
 #### （1）新增lua脚本 ```cenxt.lua```

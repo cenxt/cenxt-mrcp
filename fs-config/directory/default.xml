@@ -1,0 +1,270 @@
+<!--
+    NOTICE NOTICE NOTICE NOTICE NOTICE NOTICE NOTICE NOTICE NOTICE NOTICE
+
+    FreeSWITCH works off the concept of users and domains just like email.
+    You have users that are in domains for example 1000@domain.com.
+
+    When freeswitch gets a register packet it looks for the user in the directory
+    based on the from or to domain in the packet depending on how your sofia profile
+    is configured.  Out of the box the default domain will be the IP address of the
+    machine running FreeSWITCH.  This IP can be found by typing "sofia status" at the
+    CLI.  You will register your phones to the IP and not the hostname by default.
+    If you wish to register using the domain please open vars.xml in the root conf
+    directory and set the default domain to the hostname you desire.  Then you would
+    use the domain name in the client instead of the IP address to register
+    with FreeSWITCH.
+
+    NOTICE NOTICE NOTICE NOTICE NOTICE NOTICE NOTICE NOTICE NOTICE NOTICE
+-->
+
+<include>
+  <!--the
+  domain or ip (the right hand side of the @ in the addr-->
+  <domain name="$${domain}">
+    <params>
+      <param name="dial-string"
+        value="{^^:sip_invite_domain=${dialed_domain}:presence_id=${dialed_user}@${dialed_domain}}${sofia_contact(*/${dialed_user}@${dialed_domain})},${verto_contact(${dialed_user}@${dialed_domain})}" />
+      <!-- These are required for Verto to function properly -->
+      <param name="jsonrpc-allowed-methods" value="verto" />
+      <!-- <param name="jsonrpc-allowed-event-channels" value="demo,conference,presence"/> -->
+    </params>
+
+    <variables>
+      <variable name="record_stereo" value="true" />
+      <variable name="default_gateway" value="$${default_provider}" />
+      <variable name="default_areacode" value="$${default_areacode}" />
+      <variable name="transfer_fallback_extension" value="operator" />
+    </variables>
+
+    <groups>
+      <group name="default">
+        <users>
+          <user id='1000'>
+            <params>
+              <param name='password' value='1234' />
+              <param name='vm-password' value='1234' />
+            </params>
+            <variables>
+              <variable name='effective_caller_id_number' value='1000' />
+              <variable name='user_context' value='default' />
+            </variables>
+          </user>
+
+          <user id='1001'>
+            <params>
+              <param name='password' value='1234' />
+              <param name='vm-password' value='1234' />
+            </params>
+            <variables>
+              <variable name='effective_caller_id_number' value='1001' />
+              <variable name='user_context' value='default' />
+            </variables>
+          </user>
+
+          <user id='1002'>
+            <params>
+              <param name='password' value='1234' />
+              <param name='vm-password' value='1234' />
+              <param name="call-limit" value="2"/> <!-- 允许最多 5 路并发 -->
+            </params>
+            <variables>
+              <variable name='effective_caller_id_number' value='1002' />
+              <variable name='user_context' value='default' />
+            </variables>
+          </user>
+
+          <user id='1003'>
+            <params>
+              <param name='password' value='1234' />
+              <param name='vm-password' value='1234' />
+            </params>
+            <variables>
+              <variable name='effective_caller_id_number' value='1003' />
+              <variable name='user_context' value='default' />
+            </variables>
+          </user>
+
+          <user id='1004'>
+            <params>
+              <param name='password' value='1234' />
+              <param name='vm-password' value='1234' />
+            </params>
+            <variables>
+              <variable name='effective_caller_id_number' value='1004' />
+              <variable name='user_context' value='default' />
+            </variables>
+          </user>
+
+          <user id='1005'>
+            <params>
+              <param name='password' value='1234' />
+              <param name='vm-password' value='1234' />
+            </params>
+            <variables>
+              <variable name='effective_caller_id_number' value='1005' />
+              <variable name='user_context' value='default' />
+            </variables>
+          </user>
+
+          <user id='1006'>
+            <params>
+              <param name='password' value='1234' />
+              <param name='vm-password' value='1234' />
+            </params>
+            <variables>
+              <variable name='effective_caller_id_number' value='1006' />
+              <variable name='user_context' value='default' />
+            </variables>
+          </user>
+
+          <user id='1007'>
+            <params>
+              <param name='password' value='1234' />
+              <param name='vm-password' value='1234' />
+            </params>
+            <variables>
+              <variable name='effective_caller_id_number' value='1007' />
+              <variable name='user_context' value='default' />
+            </variables>
+          </user>
+
+          <user id='1008'>
+            <params>
+              <param name='password' value='1234' />
+              <param name='vm-password' value='1234' />
+            </params>
+            <variables>
+              <variable name='effective_caller_id_number' value='1008' />
+              <variable name='user_context' value='default' />
+            </variables>
+          </user>
+
+          <user id='1009'>
+            <params>
+              <param name='password' value='1234' />
+              <param name='vm-password' value='1234' />
+            </params>
+            <variables>
+              <variable name='effective_caller_id_number' value='1009' />
+              <variable name='user_context' value='default' />
+            </variables>
+          </user>
+
+          <user id='1010'>
+            <params>
+              <param name='password' value='1234' />
+              <param name='vm-password' value='1234' />
+            </params>
+            <variables>
+              <variable name='effective_caller_id_number' value='1010' />
+              <variable name='user_context' value='default' />
+            </variables>
+          </user>
+
+          <user id='1011'>
+            <params>
+              <param name='password' value='1234' />
+              <param name='vm-password' value='1234' />
+            </params>
+            <variables>
+              <variable name='effective_caller_id_number' value='1011' />
+              <variable name='user_context' value='default' />
+            </variables>
+          </user>
+
+          <user id='1012'>
+            <params>
+              <param name='password' value='1234' />
+              <param name='vm-password' value='1234' />
+            </params>
+            <variables>
+              <variable name='effective_caller_id_number' value='1012' />
+              <variable name='user_context' value='default' />
+            </variables>
+          </user>
+
+          <user id='1013'>
+            <params>
+              <param name='password' value='1234' />
+              <param name='vm-password' value='1234' />
+            </params>
+            <variables>
+              <variable name='effective_caller_id_number' value='1013' />
+              <variable name='user_context' value='default' />
+            </variables>
+          </user>
+
+          <user id='1014'>
+            <params>
+              <param name='password' value='1234' />
+              <param name='vm-password' value='1234' />
+            </params>
+            <variables>
+              <variable name='effective_caller_id_number' value='1014' />
+              <variable name='user_context' value='default' />
+            </variables>
+          </user>
+
+          <user id='1015'>
+            <params>
+              <param name='password' value='1234' />
+              <param name='vm-password' value='1234' />
+            </params>
+            <variables>
+              <variable name='effective_caller_id_number' value='1015' />
+              <variable name='user_context' value='default' />
+            </variables>
+          </user>
+
+          <user id='1016'>
+            <params>
+              <param name='password' value='1234' />
+              <param name='vm-password' value='1234' />
+            </params>
+            <variables>
+              <variable name='effective_caller_id_number' value='1016' />
+              <variable name='user_context' value='default' />
+            </variables>
+          </user>
+
+          <user id='1017'>
+            <params>
+              <param name='password' value='1234' />
+              <param name='vm-password' value='1234' />
+            </params>
+            <variables>
+              <variable name='effective_caller_id_number' value='1017' />
+              <variable name='user_context' value='default' />
+            </variables>
+          </user>
+
+          <user id='1018'>
+            <params>
+              <param name='password' value='1234' />
+              <param name='vm-password' value='1234' />
+            </params>
+            <variables>
+              <variable name='effective_caller_id_number' value='1018' />
+              <variable name='user_context' value='default' />
+            </variables>
+          </user>
+
+          <user id='1019'>
+            <params>
+              <param name='password' value='1234' />
+              <param name='vm-password' value='1234' />
+            </params>
+            <variables>
+              <variable name='effective_caller_id_number' value='1019' />
+              <variable name='user_context' value='default' />
+            </variables>
+          </user>
+
+
+        </users>
+      </group>
+
+    </groups>
+
+  </domain>
+</include>

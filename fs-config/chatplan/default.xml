@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<include>
+  <context name="default">
+<extension name="unimrcp">
+    <condition field="destination_number" expression="^1">
+   	    <action application="answer"/>
+        <action application="lua" data="names.lua"/>
+    </condition>
+</extension>
+  </context>
+</include>

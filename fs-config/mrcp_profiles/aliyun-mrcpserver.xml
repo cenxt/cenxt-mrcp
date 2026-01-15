@@ -1,0 +1,17 @@
+<include>
+  <profile name="aliyun-mrcpserver" version="2">
+    <param name="client-ip" value="$${local_ip_v4}"/>
+    <param name="client-port" value="5069"/>
+    <param name="server-ip" value="127.0.0.1"/>
+    <param name="server-port" value="7010"/>
+    <param name="resource-location" value=""/>
+    <param name="sip-transport" value="udp"/>
+    <param name="sdp-origin" value="Freeswitch"/>
+    <param name="rtp-ip" value="$${local_ip_v4}"/>
+    <param name="rtp-port-min" value="40000"/>
+    <param name="rtp-port-max" value="40020"/>
+    <param name="speechsynth" value="speechsynthesizer"/>
+    <param name="speechrecog" value="speechrecognizer"/>
+    <param name="codecs" value="PCMU PCMA L16/96/8000"/>
+  </profile>
+</include>
