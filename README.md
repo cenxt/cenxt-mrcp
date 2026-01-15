@@ -38,7 +38,7 @@ CENXT MRCP Server 是一个基于Java实现的MRCPv2协议服务器，支持语�
 ```
 docker pull ccr.ccs.tencentyun.com/cenxt/cenxt-freeswitch-with-mrcp:1.10.12
 ```
-（可选，参考使用）freeswitch参考配置 https://github.com/cenxt/cenxt-mrcp/fs-config
+（可选，参考使用）freeswitch参考配置 https://github.com/cenxt/cenxt-mrcp/tree/main/fs-config
 
 （可选，参考使用）docker启动命令
 ```
