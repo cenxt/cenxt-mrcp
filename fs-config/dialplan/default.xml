@@ -13,7 +13,7 @@
 <include>
   <context name="default">
 	  <extension name="unimrcp">
-      <condition field="destination_number" expression="^10$">
+      <condition field="destination_number" expression="^10">
           <action application="answer"/>
           <action application="lua" data="cenxt.lua"/>
       </condition>
