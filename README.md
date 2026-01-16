@@ -49,7 +49,6 @@ docker run --name freeswitch -d  \
 -p 5060:5060/udp \
 -p 5066:5066/tcp \
 -p 20000-20020:20000-20020/udp \
---network host \
 ccr.ccs.tencentyun.com/cenxt/cenxt-freeswitch-with-mrcp:1.10.12
 
 ```
